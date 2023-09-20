@@ -10,8 +10,10 @@ def equals():
     total = str(eval(equation_text))
     equation_label.set(total)
 
-def clear():
-    pass
+def clears():
+    global equation_text
+    equation_text = ""
+    equation_label.set(equation_text)
 
 
 window = Tk()
@@ -74,6 +76,9 @@ divide.grid(row=3,column=3)
 
 equal =  Button(frame,width=9,height=4,text="=",command=equals)
 equal.grid(row=3,column=2)
+
+clear =  Button(window,width=15,height=4,text="clear",command=clears,compound=TOP)
+clear.pack()
 
 
 window.mainloop()
