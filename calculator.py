@@ -63,7 +63,7 @@ multiply.grid(row=2,column=3)
 divide =  Button(frame,width=9,height=4,text="/",command=lambda : button_press("/"))
 divide.grid(row=3,column=3)
 
-equal =  Button(frame,width=9,height=4,text="=",command=lambda : button_press("="))
+equal =  Button(frame,width=9,height=4,text="=",command=lambda : equalS)
 equal.grid(row=3,column=2)
 
 
