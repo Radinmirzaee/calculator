@@ -6,9 +6,16 @@ def button_press(num):
     equation_label.set(equation_text)
 
 def equals():
-    global equation_text
-    total = str(eval(equation_text))
-    equation_label.set(total)
+    try:
+        global equation_text
+        total = str(eval(equation_text))
+        equation_label.set(total)
+    except ZeroDivisionError:
+        equation_text = ""
+        equation_label.set("can't devide by 0")
+    except SyntaxError:
+        equation_text = ""
+        equation_label.set("Syntax error!")
 
 def clears():
     global equation_text
