@@ -1,10 +1,14 @@
 from tkinter import *
 
 def button_press(num):
-    pass
+    global equation_text
+    equation_text = equation_text + str(num)
+    equation_label.set(equation_text)
 
 def equals():
-    pass
+    global equation_text
+    total = str(eval(equation_text))
+    equation_label.set(total)
 
 def clear():
     pass
@@ -15,10 +19,12 @@ window.geometry("500x500")
 
 equation_text = ""
 
-equation_label = Label(window,width=32,height=5,font=50,bg='white')
-equation_label.pack()
+equation_label = StringVar()
 
-frame = Frame(window,)
+label = Label(window,width=32,height=5,font=50,bg='white',textvariable=equation_label)
+label.pack()
+
+frame = Frame(window)
 frame.pack()
 
 button1 =   Button(frame,width=9,height=4,text=1,command=lambda : button_press(1))
@@ -63,7 +69,7 @@ multiply.grid(row=2,column=3)
 divide =  Button(frame,width=9,height=4,text="/",command=lambda : button_press("/"))
 divide.grid(row=3,column=3)
 
-equal =  Button(frame,width=9,height=4,text="=",command=lambda : equals)
+equal =  Button(frame,width=9,height=4,text="=",command=equals)
 equal.grid(row=3,column=2)
 
 
