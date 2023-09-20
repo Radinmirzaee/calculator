@@ -57,6 +57,9 @@ button9.grid(row=2,column=2)
 button0 =   Button(frame,width=9,height=4,text=0,command=lambda : button_press(0))
 button0.grid(row=3,column=0)
 
+decimal =   Button(frame,width=9,height=4,text=".",command=lambda : button_press("."))
+decimal.grid(row=3,column=1)
+
 plus =      Button(frame,width=9,height=4,text="+",command=lambda : button_press("+"))
 plus.grid(row=0,column=3)
 
